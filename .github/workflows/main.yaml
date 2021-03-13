@@ -55,7 +55,12 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
+          port: 22
+          source: 'docker-compose.yaml, config/nginx/default.conf'
+          target: '/home/${{ secrets.USER }}/app'
           script: |
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/recipes_service:v1
+            cd code
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker-compose up -d
+            sudo docker image prune -f
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/recipes_service:v1
+            sudo docker-compose up -d --force-recreate
