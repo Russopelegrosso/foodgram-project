@@ -18,7 +18,7 @@ TAGS = ['breakfast', 'lunch', 'dinner']
 
 
 def index(request):
-    '''index'''
+
     tags = request.GET.getlist('tag', TAGS)
     all_tags = Tag.objects.all()
 
