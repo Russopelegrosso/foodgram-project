@@ -20,8 +20,8 @@ services:
     restart: always
     command: gunicorn recipes_service.wsgi:application --bind 0.0.0.0:8000 --access-logfile -
     volumes:
-      - static_volume:/app/static/
-      - media_volume:/app/media/
+      - static_volume:/code/static/
+      - media_volume:/code/media/
     env_file:
       - ./.env
     depends_on:
@@ -32,8 +32,8 @@ services:
     restart: always
     image: nginx:1.19
     volumes:
-      - static_volume:/app/static/
-      - media_volume:/app/media/
+      - static_volume:/code/static/
+      - media_volume:/code/media/
       - ./config/nginx/:/etc/nginx/conf.d
     ports:
       - 80:80
