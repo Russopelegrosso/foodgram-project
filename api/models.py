@@ -1,3 +1,49 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
-# Create your models here.
+from recipes.models import Recipe
+
+
+User = get_user_model()
+
+
+class Subscription(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name='user_subscriptions',
+                             verbose_name='Подписался на')
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name='author_subscriptions',
+                               verbose_name='Автор рецепта')
+
+    class Meta:
+        unique_together = ('user', 'author')
+        verbose_name = 'Подписка'
+        verbose_name_plural = 'Подписки'
+
+
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name='user_favorites',
+                             verbose_name='Пользователь')
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
+                               related_name='recipe_favorites',
+                               verbose_name='Рецепт в избранном')
+
+    class Meta:
+        unique_together = ('user', 'recipe')
+        verbose_name = 'Избранный рецепт'
+        verbose_name_plural = 'Избранные рецепты'
+
+
+class PurchaseList(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name='user_purchase_list',
+                             verbose_name='Пользователь')
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
+                               related_name='recipe_purchase_list',
+                               verbose_name='Рецепт в покупках')
+
+    class Meta:
+        unique_together = ('user', 'recipe')
+        verbose_name = 'Покупка'
+        verbose_name_plural = 'Покупки'
