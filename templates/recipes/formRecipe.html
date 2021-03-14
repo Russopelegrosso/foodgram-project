@@ -3,14 +3,25 @@
 {% load static %}
 {% load user_filters %}
 
-{% block title %}Создание рецепта{% endblock %}
+{% block title %}
+  {% if recipe %}
+    Изменение рецепта
+  {% else %}
+    Создание рецепта
+  {% endif %}
+{% endblock %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'pages/form.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="main__header">
+  {% if recipe %}
+  <h1 class="main__title">Изменение рецепта</h1>
+  {% else %}
   <h1 class="main__title">Создание рецепта</h1>
+  {% endif %}
 </div>
 <div class="form-container">
   <form class="form" method="post" enctype="multipart/form-data">
