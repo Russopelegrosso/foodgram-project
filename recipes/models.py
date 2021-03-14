@@ -6,7 +6,7 @@ User = get_user_model()
 
 
 class Ingredient(models.Model):
-    title = models.CharField('Название ингредиента', max_length=55,
+    title = models.CharField('Название ингредиента', max_length=70,
                              db_index=True)
     unit = models.CharField('Единица измерения', max_length=10)
 
