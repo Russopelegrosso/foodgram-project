@@ -1,17 +1,11 @@
 # Foodgram
+### Описание
+Онлайн-сервис, где пользователи могут публиковать рецепты, подписываться на публикации других пользователей, добавлять понравившиеся рецепты в список «Избранное», а перед походом в магазин скачивать сводный список продуктов, необходимых для приготовления одного или нескольких выбранных блюд
+
+The site is available on http://178.154.212.92
 
 
-![foodgram-project](https://github.com/Russopelegrosso/foodgram-project/workflows/Foodgram/badge.svg)
-
-
-### Description
-Foodgram is a site that lets you create your own recipes and share them with other people. You can also subscribe to recipe authors and add recipes to your shop-list - 
-and download the list with all ingredients you need.
-
-The site is available on http://
-
-
-## Technology  stack
+## Стек технологий
 - Python 3.8
 - Django and Django Rest Framework
 - PostgreSQL
@@ -19,25 +13,27 @@ The site is available on http://
 - CI/CD: Docker, docker-compose, GitHub Actions
 - Yandex.Cloud
 
-## Setup
-- Clone the github repository
+## Как запустить проект
+- Клонируйте репозитроий с проектом:
     ```
     git clone https://github.com/Russopelegrosso/foodgram-project.git
     ```
-- Enter the project directory
+- Перейдите в директорию проекта
     ```
     cd foodgram-project/
     ```
-- Start docker-compose
+- Запустите docker-compose
     ```
     docker-compose -f docker-compose.yaml up -d
     ```
-- Execute migrations and collectstatic
+- В новом окне терминала узнайте id контейнера foodgram и войдите в контейнер:
     ```
-    docker-compose exec web python manage.py migrate
-    docker-compose exec web python manage.py collectstatic
+    docker container ps
+    docker exec -it <CONTAINER_ID> bash
     ```
-- Create superuser
+- В контейнере выполните migrate, создайте createsuperuser и collectstatic:
     ```
-    docker-compose -f docker-compose.yaml run --rm web python manage.py createsuperuser
+    python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py collectstatic
     ```
