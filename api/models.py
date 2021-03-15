@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.db.models import UniqueConstraint
 
 from recipes.models import Recipe
-
 
 User = get_user_model()
 
@@ -16,9 +16,12 @@ class Subscription(models.Model):
                                verbose_name='Автор рецепта')
 
     class Meta:
-        unique_together = ('user', 'author')
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
+        constraints = [
+            UniqueConstraint(fields=['user', 'author'],
+                             name='unique_subscription')
+        ]
 
 
 class Favorite(models.Model):
@@ -30,9 +33,12 @@ class Favorite(models.Model):
                                verbose_name='Рецепт в избранном')
 
     class Meta:
-        unique_together = ('user', 'recipe')
         verbose_name = 'Избранный рецепт'
         verbose_name_plural = 'Избранные рецепты'
+        constraints = [
+            UniqueConstraint(fields=['user', 'recipe'],
+                             name='unique_favorite')
+        ]
 
 
 class PurchaseList(models.Model):
@@ -44,6 +50,9 @@ class PurchaseList(models.Model):
                                verbose_name='Рецепт в покупках')
 
     class Meta:
-        unique_together = ('user', 'recipe')
         verbose_name = 'Покупка'
         verbose_name_plural = 'Покупки'
+        constraints = [
+            UniqueConstraint(fields=['user', 'recipe'],
+                             name='unique_purchase_list')
+        ]

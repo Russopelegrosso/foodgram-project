@@ -1,6 +1,7 @@
 from autoslug import AutoSlugField
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.db.models import UniqueConstraint
 
 User = get_user_model()
 
@@ -67,4 +68,7 @@ class RecipeIngredient(models.Model):
                                    decimal_places=1)
 
     class Meta:
-        unique_together = ('ingredient', 'recipe')
+        constraints = [
+            UniqueConstraint(fields=['ingredient', 'recipe'],
+                             name='unique_recipe_ingredient')
+        ]
