@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/foodgram-project.iml" filepath="$PROJECT_DIR$/.idea/foodgram-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../foodgram-project-master/.idea/foodgram-project-master.iml" filepath="$PROJECT_DIR$/../../foodgram-project-master/.idea/foodgram-project-master.iml" />
     </modules>
   </component>
 </project>
