@@ -22,7 +22,7 @@ pyparsing==2.4.7
 pytest==6.2.1
 pytils==0.3
 pytz==2020.4
-sorl-thumbnail==12.7.0
 sqlparse==0.4.1
+sorl-thumbnail==12.7.0
 toml==0.10.2
 wkhtmltopdf==0.2
