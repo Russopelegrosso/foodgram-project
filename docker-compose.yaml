@@ -7,7 +7,6 @@ volumes:
 
 services:
   db:
-    container_name: postgres
     image: postgres:12.4
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -15,7 +14,6 @@ services:
      - ./.env
 
   web:
-    container_name: foodgram
     image: 'russopelegro/recipes_service:v1'
     restart: always
     command: gunicorn recipes_service.wsgi:application --bind 0.0.0.0:8000 --access-logfile -
@@ -28,7 +26,6 @@ services:
       - db
 
   nginx:
-    container_name: nginx
     restart: always
     image: nginx:1.19
     volumes:
