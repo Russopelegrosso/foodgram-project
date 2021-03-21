@@ -7,7 +7,23 @@ from django.http import HttpResponseBadRequest
 from django.shortcuts import get_object_or_404
 from django.template.loader import get_template
 
-from .models import Ingredient, RecipeIngredient
+from .models import Ingredient, RecipeIngredient, Tag, Recipe
+
+
+def get_tags():
+    return Tag.objects.all()
+
+
+def get_recipes(tags, recipe_favorites_user=None):
+    recipes = Recipe.objects.filter(
+        recipe_favorites__user=recipe_favorites_user,
+        tags__title__in=tags
+    ).select_related(
+        'author'
+    ).prefetch_related(
+        'tags'
+    ).distinct()
+    return recipes
 
 
 def get_ingredients(request):

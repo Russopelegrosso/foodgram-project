@@ -10,7 +10,7 @@ from django.db.models import Count, Sum
 
 from .models import Recipe, Tag
 from .forms import RecipeForm
-from .utils import save_recipe, edit_recipe, generate_pdf
+from .utils import save_recipe, edit_recipe, generate_pdf, get_tags, get_recipes
 
 
 User = get_user_model()
@@ -20,15 +20,8 @@ TAGS = ['breakfast', 'lunch', 'dinner']
 def index(request):
 
     tags = request.GET.getlist('tag', TAGS)
-    all_tags = Tag.objects.all()
-
-    recipes = Recipe.objects.filter(
-        tags__title__in=tags
-    ).select_related(
-        'author'
-    ).prefetch_related(
-        'tags'
-    ).distinct()
+    all_tags = get_tags()
+    recipes = get_recipes(tags=tags)
 
     paginator = Paginator(recipes, settings.PAGINATION_PAGE_SIZE)
     page_number = request.GET.get('page')
@@ -48,7 +41,7 @@ def index(request):
 
 def recipe_view_redirect(request, recipe_id):
 
-    recipe = get_object_or_404(Recipe.objects.all(), id=recipe_id)
+    recipe = get_object_or_404(Recipe, id=recipe_id)
 
     return redirect('recipe_view_slug', recipe_id=recipe.id, slug=recipe.slug)
 
@@ -116,7 +109,7 @@ def recipe_delete(request, recipe_id, slug):
 def profile_view(request, username):
 
     tags = request.GET.getlist('tag', TAGS)
-    all_tags = Tag.objects.all()
+    all_tags = get_tags()
 
     author = get_object_or_404(User, username=username)
     author_recipes = author.author_recipes.filter(
@@ -152,7 +145,6 @@ def subscriptions(request):
     paginator = Paginator(authors, settings.PAGINATION_PAGE_SIZE)
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
-    print(authors)
     return render(
         request,
         'recipes/myFollow.html',
@@ -167,16 +159,8 @@ def subscriptions(request):
 def favorites(request):
 
     tags = request.GET.getlist('tag', TAGS)
-    all_tags = Tag.objects.all()
-
-    recipes = Recipe.objects.filter(
-        recipe_favorites__user=request.user,
-        tags__title__in=tags
-    ).select_related(
-        'author'
-    ).prefetch_related(
-        'tags'
-    ).distinct()
+    all_tags = get_tags()
+    recipes = get_recipes(tags=tags, recipe_favorites_user=request.user)
 
     paginator = Paginator(recipes, settings.PAGINATION_PAGE_SIZE)
     page_number = request.GET.get('page')
