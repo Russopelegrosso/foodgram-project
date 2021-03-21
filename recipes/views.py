@@ -8,9 +8,10 @@ from django.core.paginator import Paginator
 from django.http import FileResponse
 from django.db.models import Count, Sum
 
-from .models import Recipe, Tag
+from .models import Recipe
 from .forms import RecipeForm
-from .utils import save_recipe, edit_recipe, generate_pdf, get_tags, get_recipes
+from .utils import (save_recipe, edit_recipe, generate_pdf, get_tags,
+                    get_recipes)
 
 
 User = get_user_model()
