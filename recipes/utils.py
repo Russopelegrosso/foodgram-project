@@ -15,9 +15,17 @@ def get_tags():
 
 
 def get_recipes(tags, recipe_favorites_user=None):
+    if recipe_favorites_user:
+        filter_param = {
+            'recipe_favorites__user': recipe_favorites_user,
+            'tags__title__in': tags
+        }
+    else:
+        filter_param = {
+            'tags__title__in': tags
+        }
     recipes = Recipe.objects.filter(
-        recipe_favorites__user=recipe_favorites_user,
-        tags__title__in=tags
+        **filter_param
     ).select_related(
         'author'
     ).prefetch_related(

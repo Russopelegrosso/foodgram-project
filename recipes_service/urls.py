@@ -10,8 +10,9 @@ handler404 = 'recipes_service.views.page_not_found'
 handler500 = 'recipes_service.views.server_error'
 
 flatpages_urls = [
-    path('', flatpage, {'url': '/author/'}, name='about_author'),
-    path('', flatpage, {'url': '/tech/'}, name='about_tech'),
+    path('pages/', include('django.contrib.flatpages.urls')),
+    path('author/', flatpage, {'url': '/author/'}, name='about_author'),
+    path('tech/', flatpage, {'url': '/tech/'}, name='about_tech'),
 ]
 
 

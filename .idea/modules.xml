@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/foodgram-project.iml" filepath="$PROJECT_DIR$/.idea/foodgram-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../yamdb_final/.idea/yamdb_final.iml" filepath="$PROJECT_DIR$/../yamdb_final/.idea/yamdb_final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../socialblade_parser/.idea/socialblade_parser.iml" filepath="$PROJECT_DIR$/../socialblade_parser/.idea/socialblade_parser.iml" />
     </modules>
   </component>
 </project>
