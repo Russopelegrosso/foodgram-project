@@ -11,6 +11,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
+      # без этого не смог запустить контейнер,
+      # через файл не получилось, на формумах нашел такое решение
         POSTGRES_PASSWORD: postgres
     env_file:
      - ./.env
