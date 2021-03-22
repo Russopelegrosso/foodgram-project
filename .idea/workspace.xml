@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="91976666-ec98-4d2d-b914-9e0f63c40f76" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/foodgram-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/foodgram-project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes_service/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes_service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes_service/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/authForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/authForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/resetPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/resetPassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/recipes/singlePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recipes/singlePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recipes/favorite.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recipes/favorite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recipes/myFollow.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recipes/myFollow.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
