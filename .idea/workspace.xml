@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91976666-ec98-4d2d-b914-9e0f63c40f76" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/static/js/formRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/static/js/formRecipe.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recipes_service/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes_service/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../socialblade_parser/chan.py" beforeDir="false" afterPath="$PROJECT_DIR$/../socialblade_parser/chan.py" afterDir="false" />
     </list>

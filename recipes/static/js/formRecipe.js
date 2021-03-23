@@ -34,6 +34,7 @@ function Ingredients() {
     };
     // Добавление элемента из инпута
     const addIngredient = (e) => {
+        var input = document.getElementById("cantidad");
         if(nameIngredient.value && cantidad.value && cantidad.value > 0) {
             const data = getValue();
             const elem = document.createElement('div');
@@ -44,10 +45,9 @@ function Ingredients() {
                              <input id="valueIngredient_${cur}" name="valueIngredient_${cur}" type="hidden" value="${data.value}">
                              <input id="unitsIngredient_${cur}" name="unitsIngredient_${cur}" type="hidden" value="${data.units}">`;
             cur++;
-
             ingredientsContainer.appendChild(elem);
+            input.setCustomValidity('');
         }else{
-            var input = document.getElementById("cantidad");
             input.setCustomValidity('Значение не должно быть отрицательным');
             input.reportValidity();
         }
