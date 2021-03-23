@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91976666-ec98-4d2d-b914-9e0f63c40f76" name="Default Changelist" comment="" />
+    <list default="true" id="91976666-ec98-4d2d-b914-9e0f63c40f76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/registration/password_reset_confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/static/js/formRecipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/static/js/formRecipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/templatetags/user_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/templatetags/user_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes_service/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes_service/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/authForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_change_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/changePasswordDone.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_change_done.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/logged_out.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/resetPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_reset_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/resetPasswordConfirm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/resetPasswordDone.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/password_reset_done.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/auth/signUp.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/signUp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recipes/formRecipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recipes/formRecipe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/recipes/singlePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/recipes/singlePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../socialblade_parser/chan.py" beforeDir="false" afterPath="$PROJECT_DIR$/../socialblade_parser/chan.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

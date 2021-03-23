@@ -1,7 +1,7 @@
 from django import template
 from django.contrib.auth import get_user_model
 
-from api.models import Favorite, PurchaseList
+from api.models import Favorite, PurchaseList, Subscription
 
 
 register = template.Library()
@@ -15,8 +15,7 @@ def addclass(field, css):
 
 @register.filter
 def is_subscribed_to(user, author):
-    return User.objects.filter(user_subscriptions__user=user,
-                               author_subscriptions__user=author).exists()
+    return Subscription.objects.filter(author=author, user=user).exists()
 
 
 @register.filter
